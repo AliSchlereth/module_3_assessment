@@ -7,7 +7,9 @@ class Store
               :address,
               :state,
               :zip,
-              :store_type
+              :store_type,
+              :sid,
+              :hours
 
   def initialize(attributes)
     @sid = attributes[:storeId]
@@ -19,6 +21,7 @@ class Store
     @zip = attributes[:postalCode]
     @distance = attributes[:distance]
     @store_type = attributes[:storeType]
+    @hours = attributes[:hours]
   end
 
 
