@@ -2,7 +2,7 @@
 Displayng <%= @counts[-1] %> Stores
 
 <% @stores.each do |store| %>
-  Name: <%= store.name %>
+  Name: <%=link_to store.name, store_path(store, name: store.name, address: store.address, ) %>
   City: <%= store.city %>
   Distance: <%= store.distance %>
   Phone: <%= store.phone %>

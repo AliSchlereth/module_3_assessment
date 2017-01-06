@@ -4,13 +4,19 @@ class Store
               :phone,
               :city,
               :distance,
+              :address,
+              :state,
+              :zip,
               :store_type
 
   def initialize(attributes)
-    @sid = attributes[:id]
+    @sid = attributes[:storeId]
     @name = attributes[:longName]
     @phone = attributes[:phone]
     @city = attributes[:city]
+    @address = attributes[:address]
+    @state = attributes[:region]
+    @zip = attributes[:postalCode]
     @distance = attributes[:distance]
     @store_type = attributes[:storeType]
   end

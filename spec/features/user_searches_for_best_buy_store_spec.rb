@@ -24,7 +24,9 @@ describe "user searches for a Best Buy store" do
       click_on "Search"
       click_on "Best Buy Mobile - Cherry Creek Shopping Center"
 
-      # expect(current_path)
+      expect(page).to have_content("Name: Best Buy Mobile - Cherry Creek Shopping Center")
+      expect(page).to have_content("Store Type: Mobile")
+
     end
   end
 end

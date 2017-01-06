@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :users,  only: [:index, :show]
 
   get '/search', to: "search#index"
+  resources :stores, only: :show
 
   namespace :api do
     namespace :v1 do
