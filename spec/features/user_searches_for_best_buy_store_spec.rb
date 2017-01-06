@@ -5,6 +5,7 @@ describe "user searches for a Best Buy store" do
     it "returns 15 stores within a 25mi radius" do
       visit "/"
       fill_in "search", with: 80202
+      click_on "Search"
 
       expect(current_path).to eq(search_path)
       expect(page).to have_content("16 Total Stores")
