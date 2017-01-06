@@ -1,6 +1,7 @@
 class Api::V1::ItemsController < ApplicationController
-  # protect_from_forgery with: :null_session
-  protect_from_forgery except: [:create, :destroy]
+  protect_from_forgery with: :null_session
+  # protect_from_forgery except: [:create, :destroy]
+  # skip_before_action :verify_authenticity_token
 
   def index
     render json: Item.all
@@ -11,6 +12,7 @@ class Api::V1::ItemsController < ApplicationController
   end
 
   def create
+    binding.pry
       item = Item.new(item_params)
       if item.save
         render json: item, status: 201
