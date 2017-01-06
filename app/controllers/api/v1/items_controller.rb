@@ -1,4 +1,6 @@
 class Api::V1::ItemsController < ApplicationController
+  # protect_from_forgery with: :null_session
+  protect_from_forgery except: [:create, :destroy]
 
   def index
     render json: Item.all

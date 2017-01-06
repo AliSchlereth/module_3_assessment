@@ -71,13 +71,17 @@ describe "item requests" do
       expect(response.status).to eq(201)
       expect(item).to be_an(Hash)
       expect(item).to have_key('id')
-      expect(item).to have_key('name')
-      expect(item).to have_key('description')
-      expect(item).to have_key('image_url')
+      expect(item['name']).to eq("Name3")
+      expect(item['description']).to eq('describe me')
+      expect(item['image_url']).to eq("image")
       expect(item).to_not have_key('created_at')
       expect(item).to_not have_key('updated_at')
     end
   end
+
+
+
+
 
 
 
