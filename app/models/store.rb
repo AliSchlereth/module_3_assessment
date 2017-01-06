@@ -7,6 +7,7 @@ class Store
               :store_type
 
   def initialize(attributes)
+    @sid = attributes[:id]
     @name = attributes[:longName]
     @phone = attributes[:phone]
     @city = attributes[:city]
