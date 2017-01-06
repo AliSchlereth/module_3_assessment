@@ -44,18 +44,18 @@ describe "item requests" do
   context "delete an item" do
     it "returns a deleted item" do
 
-      get "/api/v1/items"
+      delete "/api/v1/items/#{@item1.id}"
 
-      items = JSON.parse(response.body)
+      item = JSON.parse(response.body)
 
       expect(response).to be_success
-      expect(items).to be_an(Array)
-      expect(items[0]).to have_key('id')
-      expect(items[0]).to have_key('name')
-      expect(items[0]).to have_key('description')
-      expect(items[0]).to have_key('image_url')
-      expect(items[0]).to_not have_key('created_at')
-      expect(items[0]).to_not have_key('updated_at')
+      expect(item).to be_an(Hash)
+      expect(item).to have_key('id')
+      expect(item).to have_key('name')
+      expect(item).to have_key('description')
+      expect(item).to have_key('image_url')
+      expect(item).to_not have_key('created_at')
+      expect(item).to_not have_key('updated_at')
     end
   end
 
