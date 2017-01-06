@@ -59,5 +59,26 @@ describe "item requests" do
     end
   end
 
+  context "create an item" do
+    it "returns a created item" do
+      headers = {"CONTENT-TYPE" => "application/json"}
+      params = {item: {name: "Name3", description: "describe me", image_url: "image"}}.to_json
+
+      post "/api/v1/items", params, headers
+
+      item = JSON.parse(response.body)
+
+      expect(response.status).to eq(201)
+      expect(item).to be_an(Hash)
+      expect(item).to have_key('id')
+      expect(item).to have_key('name')
+      expect(item).to have_key('description')
+      expect(item).to have_key('image_url')
+      expect(item).to_not have_key('created_at')
+      expect(item).to_not have_key('updated_at')
+    end
+  end
+
+
 
 end
