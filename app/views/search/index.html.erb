@@ -1,3 +1,10 @@
+<%= @counts[0] %> Total Stores within 25 miles
+Displayng <%= @counts[-1] %> Stores
+
 <% @stores.each do |store| %>
   Name: <%= store.name %>
-  <%= store.city %>
+  City: <%= store.city %>
+  Distance: <%= store.distance %>
+  Phone: <%= store.phone %>
+  Store Type: <%= store.store_type %>
+<% end %>
