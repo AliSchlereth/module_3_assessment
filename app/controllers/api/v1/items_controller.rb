@@ -13,9 +13,8 @@ class Api::V1::ItemsController < ApplicationController
       if item.save
         render json: item, status: 201
       else
-        render json: {message: "Unable to create item"}, status 404
+        render json: {message: "Unable to create item"}, status: 400
       end
-
   end
 
   def destroy
@@ -26,6 +25,11 @@ class Api::V1::ItemsController < ApplicationController
       render json: {message: "Unable to delete item."}, status: 404
     end
   end
+
+  private
+    def item_params
+      params.require(:item).permit(:name, :description, :image_url)
+    end
 
 
 end
