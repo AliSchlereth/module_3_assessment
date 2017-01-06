@@ -39,8 +39,9 @@ class Store
   end
 
   def self.get_store_by_id(id)
-    response = Faraday.get("https://api.bestbuy.com/v1/stores(storeId=#{id})?format=json&show=hours,hoursAmPm,gmtOffset,detailedHours&apiKey=#{ENV["BEST_BUY_KEY"]}")
-    hour_info = JSON.parse(response.body, symbolize_names: true)
+    # response = Faraday.get("https://api.bestbuy.com/v1/stores(storeId=#{id})?format=json&show=hours,hoursAmPm,gmtOffset,detailedHours&apiKey=#{ENV["BEST_BUY_KEY"]}")
+    # hour_info = JSON.parse(response.body, symbolize_names: true)
+    hour_info = BestBuyService.get_store_by_id(id)
   end
 
 
