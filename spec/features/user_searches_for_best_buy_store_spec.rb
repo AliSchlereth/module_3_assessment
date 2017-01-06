@@ -26,7 +26,9 @@ describe "user searches for a Best Buy store" do
 
       expect(page).to have_content("Name: Best Buy Mobile - Cherry Creek Shopping Center")
       expect(page).to have_content("Store Type: Mobile")
-
+      expect(page).to have_content("3000 East First Ave")
+      expect(page).to have_content("Denver CO, 80206")
+      expect(page).to have_content("Mon: 10-9; Tue: 10-9; Wed: 10-9; Thurs: 10-9; Fri: 10-9; Sat: 10-9; Sun: 10-6")
     end
   end
 end
